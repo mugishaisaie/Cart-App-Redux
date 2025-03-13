@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import CartItem from './CartItem'
 import { openModal } from '../features/modal/ModalSlice'
+import { getCartItems } from '../features/cart/cartSlice'
 
 
 const CartContainer = () => {
@@ -14,6 +15,7 @@ const CartContainer = () => {
             <header>
                 <h2>Your Cart</h2>
                 <h4 className='empty-cart'>is Currently Empty</h4>
+            <button className='btn refresh'onClick={()=>dispatch(getCartItems())}>Refresh Items</button>
             </header>
             </section>
         )
